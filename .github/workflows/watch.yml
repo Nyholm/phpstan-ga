@@ -1,4 +1,4 @@
-name: Watch for changes
+name: Watch for updates
 
 on:
   schedule:

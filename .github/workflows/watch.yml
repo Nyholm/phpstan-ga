@@ -20,5 +20,5 @@ jobs:
           echo "Last PHPStan version is $last"
           echo ::set-output name=last::$last
 
-          sed -i -re "s/require phpstan\/phpstan [^\\]/require phpstan\/phpstan $last/" Dockerfile
+          sed -i -re "s/require phpstan\/phpstan [^\\]+/require phpstan\/phpstan $last/" Dockerfile
           cat Dockerfile

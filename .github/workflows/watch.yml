@@ -17,7 +17,7 @@ jobs:
         id: fetch_version
         run: |
           last=$(curl -s https://packagist.org/packages/phpstan/phpstan.json|jq '[.package.versions[]|select(.version|test("^\\d+\\.\\d+\\.\\d+$"))|.version]|max_by(.|[splits("[.]")]|map(tonumber))')
-          last=$($last | r -d '"')
+          last=$(echo $last | r -d '"')
           echo "Last PHPStan version is $last"
           echo ::set-output name=last::$last
 

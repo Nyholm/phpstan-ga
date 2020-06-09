@@ -1,4 +1,4 @@
-name: Watch for updates
+name: Watch
 
 on: [push]
 
@@ -8,17 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up PHP
-        uses: shivammathur/setup-php@2.1.2
-        with:
-          php-version: 7.4
-          coverage: none
-
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           ref: master
-          token: ${{ secrets.BOT_GITHUB_TOKEN }}
 
       - name: Fetch last version
         id: fetch_version
